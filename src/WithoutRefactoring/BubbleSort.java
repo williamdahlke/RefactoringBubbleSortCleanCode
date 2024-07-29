@@ -56,7 +56,7 @@ class BubbleSort {
         bubbleSort(arr, n);
         System.out.println("Array ordenado: ");
         printArray(arr, n);
-    }
+    }   
 }
 
 // This code is contributed
