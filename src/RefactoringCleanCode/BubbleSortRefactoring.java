@@ -8,12 +8,12 @@ package RefactoringCleanCode;
 public class BubbleSortRefactoring{
 
     public static int[] sortArrayWithBubbleSort(int[] arrayToSort){
-        int arraySize = arrayToSort.length;        
+        int arrayLength = arrayToSort.length;        
         int[] sortedArray = arrayToSort.clone();        
        
-        for (int i = 0; i < arraySize - 1; i++) {
+        for (int i = 0; i < arrayLength - 1; i++) {
             boolean isItemSwapped = false;
-            for (int j = 0; j < arraySize - i - 1; j++) {
+            for (int j = 0; j < arrayLength - i - 1; j++) {
                 if (sortedArray[j] > sortedArray[j + 1]) {
                     int previousItem = sortedArray[j];
                     sortedArray[j] = sortedArray[j + 1];
