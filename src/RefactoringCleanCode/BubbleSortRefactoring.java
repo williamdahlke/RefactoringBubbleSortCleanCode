@@ -4,31 +4,27 @@ package RefactoringCleanCode;
 // Código extraído de https://www.geeksforgeeks.org/bubble-sort/
 
 //O método orderArrayWithBubbleSort precisa de ajustes, pois ele tem muitas responsabilidades
-//não gostei da variável boolean trocado e nem a variável temp;
-//remover comentários que não são necessários -- ok
+//não gostei da variável boolean trocado;
 //Analisar se não é possível criar uma nova classe as características de um elemento que está sendo ordenado
-//reavaliar os nomes das variáveis 
 //Relembrar o funcionamento do BubbleSort
-//Arrumar a declaração do int i no método printArray -- ok
-//Criar testes unitários antes de refatorar um método para validar se as mudanças não vão mudar o funcionamento do método
-//O nome dos parâmetros não está legal nos métodos orderArrayWithBubbleSort -- ok
+
 
 public class BubbleSortRefactoring {
 
     public static int[] orderArrayWithBubbleSort(int[] arrayToOrder)
     {
-        int arraySize = arrayToOrder.length;
+        int arraySize = arrayToOrder.length;        
+        int[] arrayOrdered = arrayToOrder.clone();
         
-        int i, j, temp;
+        int i, j, previousItem;
         boolean trocado;
         for (i = 0; i < arraySize - 1; i++) {
             trocado = false;
             for (j = 0; j < arraySize - i - 1; j++) {
-                if (arrayToOrder[j] > arrayToOrder[j + 1]) {
-
-                    temp = arrayToOrder[j];
-                    arrayToOrder[j] = arrayToOrder[j + 1];
-                    arrayToOrder[j + 1] = temp;
+                if (arrayOrdered[j] > arrayOrdered[j + 1]) {
+                    previousItem = arrayOrdered[j];
+                    arrayOrdered[j] = arrayOrdered[j + 1];
+                    arrayOrdered[j + 1] = previousItem;
                     trocado = true;
                 }
             }
@@ -36,11 +32,12 @@ public class BubbleSortRefactoring {
             if (trocado == false)
                 break;
         }
-        return arrayToOrder;
+        return arrayOrdered;
     }
 
     private static void printArray(int arr[])
     {
+        System.out.println("Array ordenado: ");
         for (int i = 0; i < arr.length; i++) System.out.print(arr[i] + " ");
         System.out.println();
     }
@@ -49,7 +46,6 @@ public class BubbleSortRefactoring {
     {
         int[] arrayToOrder = { 64, 34, 25, 12, 22, 11, 90 };
         orderArrayWithBubbleSort(arrayToOrder);
-        System.out.println("Array ordenado: ");
         printArray(arrayToOrder);
     }
 }

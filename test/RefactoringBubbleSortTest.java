@@ -17,11 +17,7 @@ public class RefactoringBubbleSortTest {
     @BeforeClass
     public static void setUpClass() {
     }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
+        
     @Before
     public void setUp() throws Exception {
 
@@ -29,8 +25,12 @@ public class RefactoringBubbleSortTest {
     
     @After
     public void tearDown() {
-    }    
+    }
     
+    @AfterClass
+    public static void tearDownClass() {
+    }
+        
     @Test
     public void testBubbleSortRefactoring() 
     {
