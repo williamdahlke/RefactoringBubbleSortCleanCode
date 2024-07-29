@@ -13,9 +13,9 @@ package RefactoringCleanCode;
 //Criar testes unitários antes de refatorar um método para validar se as mudanças não vão mudar o funcionamento do método
 //O nome dos parâmetros não está legal nos métodos orderArrayWithBubbleSort -- ok
 
-class BubbleSort {
+public class BubbleSortRefactoring {
 
-    static void orderArrayWithBubbleSort(int[] arrayToOrder)
+    public static int[] orderArrayWithBubbleSort(int[] arrayToOrder)
     {
         int arraySize = arrayToOrder.length;
         
@@ -36,9 +36,10 @@ class BubbleSort {
             if (trocado == false)
                 break;
         }
+        return arrayToOrder;
     }
 
-    static void printArray(int arr[])
+    private static void printArray(int arr[])
     {
         for (int i = 0; i < arr.length; i++) System.out.print(arr[i] + " ");
         System.out.println();

@@ -1,43 +1,42 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
- */
+import RefactoringCleanCode.BubbleSortRefactoring;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.FixMethodOrder;
+import static org.junit.Assert.*;
+import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-
-/**
- *
- * @author User
- */
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class RefactoringBubbleSortTest {
     
     public RefactoringBubbleSortTest() {
     }
     
-    @BeforeAll
+    @BeforeClass
     public static void setUpClass() {
     }
     
-    @AfterAll
+    @AfterClass
     public static void tearDownClass() {
     }
     
-    @BeforeEach
-    public void setUp() {
+    @Before
+    public void setUp() throws Exception {
+
     }
     
-    @AfterEach
+    @After
     public void tearDown() {
+    }    
+    
+    @Test
+    public void testBubbleSortRefactoring() 
+    {
+        int[] arrayExpected = {11, 12, 22, 25, 34, 64, 90};
+        int[] arrayToOrder = {64, 34, 25, 12, 22, 11, 90};
+                
+        assertArrayEquals(arrayExpected, BubbleSortRefactoring.orderArrayWithBubbleSort(arrayToOrder));         
     }
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
 }
