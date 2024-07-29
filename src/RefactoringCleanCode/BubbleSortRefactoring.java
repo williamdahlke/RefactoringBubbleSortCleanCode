@@ -6,6 +6,12 @@ package RefactoringCleanCode;
 
 public class BubbleSortRefactoring{
 
+    public static void main(String args[]){
+        int[] arrayToSort = { 64, 34, 25, 12, 22, 11, 90 };
+        int[] sortedArray = sortArrayWithBubbleSort(arrayToSort);
+        printArray(sortedArray);
+    }              
+        
     public static int[] sortArrayWithBubbleSort(int[] arrayToSort){
         int arrayLength = arrayToSort.length;        
         int[] sortedArray = arrayToSort.clone();        
@@ -27,17 +33,11 @@ public class BubbleSortRefactoring{
         }
         return sortedArray;
     }
-
+    
     private static void printArray(int arrayToPrint[]){
         System.out.println("Array ordenado: ");
         for (int element : arrayToPrint) System.out.print(element + " ");
         System.out.println();
     }
-
-    public static void main(String args[]){
-        int[] arrayToSort = { 64, 34, 25, 12, 22, 11, 90 };
-        int[] sortedArray = sortArrayWithBubbleSort(arrayToSort);
-        printArray(sortedArray);
-    }          
 }
 
