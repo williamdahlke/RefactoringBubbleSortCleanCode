@@ -2,8 +2,7 @@ package RefactoringCleanCode;
 
 // Implementação otimizada em Java do Bubble sort
 // Código extraído de https://www.geeksforgeeks.org/bubble-sort/
-// This code is contributed
-// by Nikita Tiwari.
+// This code is contributed by Nikita Tiwari.
 
 public class BubbleSortRefactoring{
 
