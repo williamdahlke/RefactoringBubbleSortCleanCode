@@ -2,46 +2,43 @@ package RefactoringCleanCode;
 
 // Implementação otimizada em Java do Bubble sort
 // Código extraído de https://www.geeksforgeeks.org/bubble-sort/
+// This code is contributed
+// by Nikita Tiwari.
 
-public class BubbleSortRefactoring {
+public class BubbleSortRefactoring{
 
-    public static int[] orderArrayWithBubbleSort(int[] arrayToOrder)
-    {
-        int arraySize = arrayToOrder.length;        
-        int[] arrayOrdered = arrayToOrder.clone();        
+    public static int[] sortArrayWithBubbleSort(int[] arrayToSort){
+        int arraySize = arrayToSort.length;        
+        int[] sortedArray = arrayToSort.clone();        
        
         for (int i = 0; i < arraySize - 1; i++) {
-            boolean isItemPositionChanged;
-            isItemPositionChanged = false;
+            boolean isItemSwapped = false;
             for (int j = 0; j < arraySize - i - 1; j++) {
-                if (arrayOrdered[j] > arrayOrdered[j + 1]) {
-                    int previousItem = arrayOrdered[j];
-                    arrayOrdered[j] = arrayOrdered[j + 1];
-                    arrayOrdered[j + 1] = previousItem;
-                    isItemPositionChanged = true;
+                if (sortedArray[j] > sortedArray[j + 1]) {
+                    int previousItem = sortedArray[j];
+                    sortedArray[j] = sortedArray[j + 1];
+                    sortedArray[j + 1] = previousItem;
+                    isItemSwapped = true;
                 }
             }
 
-            if (isItemPositionChanged == false) break;
+            if (!isItemSwapped){
+                break;
+            }            
         }
-        return arrayOrdered;
+        return sortedArray;
     }
 
-    private static void printArray(int arrayToPrint[])
-    {
+    private static void printArray(int arrayToPrint[]){
         System.out.println("Array ordenado: ");
-        for (int i = 0; i < arrayToPrint.length; i++) System.out.print(arrayToPrint[i] + " ");
+        for (int element : arrayToPrint) System.out.print(element + " ");
         System.out.println();
     }
 
-    public static void main(String args[])
-    {
-        int[] arrayToOrder = { 64, 34, 25, 12, 22, 11, 90 };
-        orderArrayWithBubbleSort(arrayToOrder);
-        printArray(arrayToOrder);
+    public static void main(String args[]){
+        int[] arrayToSort = { 64, 34, 25, 12, 22, 11, 90 };
+        int[] sortedArray = sortArrayWithBubbleSort(arrayToSort);
+        printArray(sortedArray);
     }          
 }
-
-// This code is contributed
-// by Nikita Tiwari.
 

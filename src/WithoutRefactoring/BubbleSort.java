@@ -2,16 +2,6 @@ package WithoutRefactoring;
 
 // Código extraído de https://www.geeksforgeeks.org/bubble-sort/
 
-//O método bubbleSort precisa de ajustes, pois ele tem muitas responsabilidades
-//não gostei da variável boolean trocado e nem a variável temp;
-//remover comentários que não são necessários
-//Analisar se não é possível criar uma nova classe as características de um elemento que está sendo ordenado
-//reavaliar os nomes das variáveis
-//Relembrar o funcionamento do BubbleSort
-//Arrumar a declaração do int i no método printArray
-//Criar testes unitários antes de refatorar um método para validar se as mudanças não vão mudar o funcionamento do método
-//O nome dos parâmetros não está legal nos métodos bubbleSort
-
 class BubbleSort {
 
     // An optimized version of Bubble Sort

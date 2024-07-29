@@ -32,11 +32,10 @@ public class RefactoringBubbleSortTest {
     }
         
     @Test
-    public void testBubbleSortRefactoring() 
-    {
+    public void testBubbleSortRefactoring(){
         int[] arrayExpected = {11, 12, 22, 25, 34, 64, 90};
         int[] arrayToOrder = {64, 34, 25, 12, 22, 11, 90};
                 
-        assertArrayEquals(arrayExpected, BubbleSortRefactoring.orderArrayWithBubbleSort(arrayToOrder));         
+        assertArrayEquals(arrayExpected, BubbleSortRefactoring.sortArrayWithBubbleSort(arrayToOrder));         
     }
 }
