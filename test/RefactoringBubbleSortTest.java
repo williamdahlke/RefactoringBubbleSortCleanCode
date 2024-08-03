@@ -1,4 +1,4 @@
-import RefactoringCleanCode.BubbleSortRefactoring;
+import RefactoringCleanCode.BubbleSort;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -36,7 +36,7 @@ public class RefactoringBubbleSortTest {
         int[] arrayExpected = {11, 12, 22, 25, 34, 64, 90};
         int[] arrayToOrder = {64, 34, 25, 12, 22, 11, 90};
                 
-        assertArrayEquals(arrayExpected, BubbleSortRefactoring.sortArrayWithBubbleSort(arrayToOrder));         
+        assertArrayEquals(arrayExpected, BubbleSort.sortArrayWithBubbleSort(arrayToOrder));         
     }
 
     @Test
@@ -44,6 +44,6 @@ public class RefactoringBubbleSortTest {
         int[] arrayExpected = {11, 12, 22, 25, 90, 90, 90};
         int[] arrayToOrder = {90, 90, 25, 12, 22, 11, 90};
                 
-        assertArrayEquals(arrayExpected, BubbleSortRefactoring.sortArrayWithBubbleSort(arrayToOrder));         
+        assertArrayEquals(arrayExpected, BubbleSort.sortArrayWithBubbleSort(arrayToOrder));         
     }        
 }

@@ -4,7 +4,7 @@ package RefactoringCleanCode;
 // Código extraído de https://www.geeksforgeeks.org/bubble-sort/
 // This code is contributed by Nikita Tiwari.
 
-public class BubbleSortRefactoring{
+public class BubbleSort{
 
     public static void main(String args[]){
         int[] arrayToSort = { 64, 34, 25, 12, 22, 11, 90 };
