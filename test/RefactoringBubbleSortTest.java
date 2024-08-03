@@ -38,4 +38,12 @@ public class RefactoringBubbleSortTest {
                 
         assertArrayEquals(arrayExpected, BubbleSortRefactoring.sortArrayWithBubbleSort(arrayToOrder));         
     }
+
+    @Test
+    public void testBubbleSortRefactoring02(){
+        int[] arrayExpected = {11, 12, 22, 25, 90, 90, 90};
+        int[] arrayToOrder = {90, 90, 25, 12, 22, 11, 90};
+                
+        assertArrayEquals(arrayExpected, BubbleSortRefactoring.sortArrayWithBubbleSort(arrayToOrder));         
+    }        
 }

@@ -13,25 +13,7 @@ public class BubbleSortRefactoring{
     }              
         
     public static int[] sortArrayWithBubbleSort(int[] arrayToSort){
-        int arrayLength = arrayToSort.length;        
-        int[] sortedArray = arrayToSort.clone();        
-       
-        for (int i = 0; i < arrayLength - 1; i++) {
-            boolean isItemSwapped = false;
-            for (int j = 0; j < arrayLength - i - 1; j++) {
-                if (sortedArray[j] > sortedArray[j + 1]) {
-                    int previousItem = sortedArray[j];
-                    sortedArray[j] = sortedArray[j + 1];
-                    sortedArray[j + 1] = previousItem;
-                    isItemSwapped = true;
-                }
-            }
-
-            if (!isItemSwapped){
-                break;
-            }            
-        }
-        return sortedArray;
+        return new ArrayOperation().sortArrayWithBubbleSort(arrayToSort);
     }
     
     private static void printArray(int arrayToPrint[]){
@@ -40,4 +22,3 @@ public class BubbleSortRefactoring{
         System.out.println();
     }
 }
-
