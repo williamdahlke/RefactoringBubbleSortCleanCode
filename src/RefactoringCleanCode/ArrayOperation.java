@@ -6,8 +6,9 @@ public class ArrayOperation {
     private int lengthToLoop;
     
     public int[] sortArrayWithBubbleSort(int[] arrayToSort){       
-        cloneArrayAndSetLengthToLoop(arrayToSort);
-        
+        setCloneArray(arrayToSort);
+        setLengthToLoop(arrayToSort);
+                
         for (int i = 0; i < lengthToLoop; i++) {
             for (int j = 0; j < lengthToLoop - i; j++) {
                 if (isCurrentElementValueBiggerThenNext(j, j+1)) {
@@ -22,9 +23,12 @@ public class ArrayOperation {
         return sortedArray;
     }
 
-    private void cloneArrayAndSetLengthToLoop(int[] arrayToSort){
-        sortedArray = arrayToSort.clone();        
-        lengthToLoop = sortedArray.length - 1;         
+    private void setCloneArray(int[] arrayToSort){
+        sortedArray = arrayToSort.clone();                        
+    }
+    
+    private void setLengthToLoop(int[] arrayToSort){
+        lengthToLoop = sortedArray.length - 1; 
     }
     
     private boolean isCurrentElementValueBiggerThenNext(int currentIndex, int nextIndex) {
