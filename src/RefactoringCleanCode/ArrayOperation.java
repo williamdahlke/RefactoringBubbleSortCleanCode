@@ -11,7 +11,7 @@ public class ArrayOperation {
                 
         while (hasElementsToSort()){            
             sortElementsBubbleSort(); 
-            updateElementsToOrder(); 
+            decrementElementsToOrder(); 
         }
         return sortedArray;
     }
@@ -51,7 +51,7 @@ public class ArrayOperation {
         sortedArray[nextIndex] = previousItem;
     }
 
-    private void updateElementsToOrder(){
+    private void decrementElementsToOrder(){
         numberElementsToOrder--;
     }
 }
