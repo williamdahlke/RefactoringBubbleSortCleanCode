@@ -3,14 +3,15 @@ package RefactoringCleanCode;
 public class ArrayOperation {
     
     private int[] sortedArray;
-    private int lengthToLoop;
+    private int numberElementsToOrder;
     
     public int[] sortArrayWithBubbleSort(int[] arrayToSort){       
         setCloneArray(arrayToSort);
-        setLengthToLoop(arrayToSort);
+        setElementsToOrder(arrayToSort);
                 
-        while (hasElementsToSort()){
-            sortElementsBubbleSort();  
+        while (hasElementsToSort()){            
+            sortElementsBubbleSort(); 
+            updateElementsToOrder(); 
         }
         return sortedArray;
     }
@@ -19,44 +20,38 @@ public class ArrayOperation {
         sortedArray = arrayToSort.clone();                        
     }
     
-    private void setLengthToLoop(int[] arrayToSort){
-        lengthToLoop = arrayToSort.length - 1; 
+    private void setElementsToOrder(int[] arrayToSort){
+        numberElementsToOrder = arrayToSort.length - 1; 
     }
 
     private boolean hasElementsToSort(){
-        for (int i = 0; i < lengthToLoop; i++){
+        for (int i = 0; i < numberElementsToOrder; i++){
             if (isCurrentElementValueBiggerThenNext(i, i+1)){
                 return true;            
             }
         }
         return false;
     }
-    
-    private boolean isCurrentElementValueBiggerThenNext(int currentIndex, int nextIndex) {
-        return sortedArray[currentIndex] > sortedArray[nextIndex];
-    }
 
     private void sortElementsBubbleSort() {
-        for (int j = 0; j < lengthToLoop - getNumberElementsToSort(); j++) {
+        for (int j = 0; j < numberElementsToOrder; j++) {
             if (isCurrentElementValueBiggerThenNext(j, j+1)) {
                 changeElementsPosition(j, j+1);
             }
         }
+    }    
+
+    private boolean isCurrentElementValueBiggerThenNext(int currentIndex, int nextIndex) {
+        return sortedArray[currentIndex] > sortedArray[nextIndex];
     }
 
-    private int getNumberElementsToSort(){
-        int numberElementsToSort = 0;
-        for (int i = 0; i < lengthToLoop; i++){
-            if (isCurrentElementValueBiggerThenNext(i, i+1)){
-                numberElementsToSort++;            
-            }
-        }
-        return numberElementsToSort;
-    }
-    
     private void changeElementsPosition(int currentIndex, int nextIndex) {
         int previousItem = sortedArray[currentIndex];
         sortedArray[currentIndex] = sortedArray[nextIndex];
         sortedArray[nextIndex] = previousItem;
+    }
+
+    private void updateElementsToOrder(){
+        numberElementsToOrder--;
     }
 }
